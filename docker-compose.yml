@@ -1,11 +1,13 @@
 version: '3.8'
 services:
   webmin:
-    image: trucv/webmin:latest
+    build: .
     init: true
     volumes:
-      - wconfig:/etc/webmin
-    restart: always
+      - config:/etc/webmin
+    restart: unless-stopped
     ports:
       - 10000:10000
     container_name: webmin
+volumes:
+  config:
