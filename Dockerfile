@@ -14,7 +14,8 @@ RUN apt-get update \
  && update-rc.d -f webmin remove \
  && rm webmin_1.953_all.deb \
  && chmod 755 /usr/sbin/docker-entrypoint.sh \
- && ln -s /usr/sbin/docker-entrypoint.sh /
+ && ln -s /usr/sbin/docker-entrypoint.sh \
+ && /usr/share/webmin/changepass.pl /etc/webmin root password /
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 EXPOSE 10000/tcp
 ENTRYPOINT ["docker-entrypoint.sh"]
