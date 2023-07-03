@@ -5,5 +5,6 @@ This can be used as based image for other apps that support by webmin such as Sq
 docker-compose up -d
 # How to run with docker cli:
 docker run --rm -d --name webmin -p 10000:10000 trucv/webmin:latest
-
+# How to change password
+/usr/share/webmin/changepass.pl /etc/webmin <USER> <PASSWORD>
 
