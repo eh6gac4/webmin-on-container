@@ -8,6 +8,5 @@ services:
     restart: unless-stopped
     ports:
       - 10000:10000
-    container_name: webmin
 volumes:
   config:
